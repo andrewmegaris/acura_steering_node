@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <can_msgs/Frame.h>
 
-#include <acura_steering_node/Steering.h>
+#include <steering_monitor/Steering.h>
 #include <cmath>
 
 class subAndPub
@@ -12,8 +12,8 @@ public:
   subAndPub()
   {         
     //set up.
-    pubSteering = nh.advertise<acura_steering_node::Steering>("steering_angle", 10);
-    steering_sensor.frame_id = "/controls";
+    pubSteering = nh.advertise<steering_monitor::Steering>("steering_angle", 10);
+    steering_sensor.header.frame_id = "/controls";
 
     //Subscribe to whatever topic is publishing the CAN frames
     //if you use 'rosrun socketcan_bridge socketcan_to_topic' that is 'received_messages'
@@ -42,7 +42,7 @@ private:
   ros::NodeHandle nh; 
   ros::Publisher  pubSteering;
   ros::Subscriber sub; 
-  acura_steering_node::Steering steering_sensor;
+  steering_monitor::Steering steering_sensor;
 
 };
 

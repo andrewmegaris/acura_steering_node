@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>acura_steering</name>
+  <name>steering_monitor</name>
   <version>0.0.1</version>
-  <description>translates steerin angle from the acura's OBD2 port to ROS topic</description>
+  <description>translates steering data from the acura's OBD2 port to ROS topic</description>
 
   <maintainer email="andrew@ainstein.ai">andrew</maintainer>
 
